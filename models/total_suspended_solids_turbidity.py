@@ -45,15 +45,3 @@ def zhang_et_al_2010(band4, band2):
 def tang_et_al_2010(band3, band2):
 
     return band3.astype(float) / band2
-
-
-def create_tif(result, name):
-    meta_path = "tests/assets/20m/T22JCQ_20190806T133231_B03_20m.jp2"
-
-    meta = rio.open(meta_path).meta
-    print(meta)
-    meta.update(driver="GTiff")
-    meta.update(dtype=rasterio.float32)
-
-    with rio.open(name+".tif", "w", **meta) as dist:
-        dist.write(result.astype(rio.float32))
