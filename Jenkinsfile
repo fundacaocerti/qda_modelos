@@ -18,6 +18,11 @@ pipeline {
         stage('Models') {
             agent any
             stages {
+                state('Install requirements') {
+                    steps {
+                        sh 'python3 -m pip3 install -r requirements.txt'
+                    }
+                }
                 stage('Lint') {
                     steps {
                         dir('src') {
