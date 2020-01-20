@@ -4,9 +4,9 @@ import rasterio as rio
 
 @pytest.fixture()
 def setup_bands():
-    prefix_20m = 'tests/assets/20m/'
+    prefix_20m = 'src/tests/assets/20m/'
     suffix_20m = '_20m_20181224.tif'
-    prefix_10m = 'tests/assets/10m/'
+    prefix_10m = 'src/tests/assets/10m/'
     suffix_10m = '_10m_20181224.tif'
 
     B02_20m = rio.open(prefix_20m+'B2'+suffix_20m).read()
