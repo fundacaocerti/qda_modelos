@@ -31,15 +31,15 @@ pipeline {
                     }
                 }
                 stage('Tests') {
-                    dir('src/tests') {
-                        steps {
+                    steps {
+                        dir('src/tests') {
                             sh 'python3 -m pytest -ra --junitxml=unittest.xml'
                         }
                     }
                 }
                 stage('Coverage') {
-                    dir('src/tests') {
-                        steps {
+                    steps {
+                        dir('src/tests') {
                             sh 'python3 -m pytest --cov --cov-report=xml --cov-report=term'
                         }
                     }
