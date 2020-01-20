@@ -6,41 +6,41 @@
 import numpy
 import rasterio as rio
 import pytest
-from qda_modelos.models import total_suspended_solids_turbidity as turbidity
+from qda_modelos.src.models import total_suspended_solids_turbidity as turbidity
 
 
-class TestTSSTurbidityLiuEtAl2006:
+class TestTSSTurbidityTangEtAl2010:
 
     def test_expected_result_type(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        B8A = R20m_bands['B8A']
-        B04 = R20m_bands['B04']
+        B03 = R20m_bands['B03']
+        B02 = R20m_bands['B02']
 
-        liu_et_al_2006_result = turbidity.doxaran_et_al_2003(B8A, B04)
+        tang_et_al_2010_result = turbidity.tang_et_al_2010(B03, B02)
 
-        assert isinstance(liu_et_al_2006_result,
+        assert isinstance(tang_et_al_2010_result,
                           numpy.ndarray), "The function should return an instance of numpys ndarray"
 
     def test_expected_result_shape(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        B8A = R20m_bands['B8A']
-        B04 = R20m_bands['B04']
+        B03 = R20m_bands['B03']
+        B02 = R20m_bands['B02']
 
-        liu_et_al_2006_result = turbidity.liu_et_al_2006(B8A, B04)
+        tang_et_al_2010_result = turbidity.tang_et_al_2010(B03, B02)
 
-        assert liu_et_al_2006_result.shape == B8A.shape
+        assert tang_et_al_2010_result.shape == B03.shape
 
     def test_expected_error_for_wrong_number_of_bands(self, setup_bands):
-        B8A = setup_bands["20m"]['B8A']
+        B03 = setup_bands['20m']['B03']
 
         with pytest.raises(TypeError):
-            turbidity.doxaran_et_al_2003(B8A)
+            turbidity.tang_et_al_2010(B03)
 
     def test_expected_error_for_bands_of_different_shapes(self, setup_bands):
-        B8A = setup_bands["20m"]['B8A']
-        B04 = setup_bands["10m"]['B04']
+        B03 = setup_bands['20m']['B03']
+        B02 = setup_bands['10m']['B02']
 
         with pytest.raises(ValueError):
-            turbidity.doxaran_et_al_2003(B8A, B04)
+            turbidity.tang_et_al_2010(B03, B02)

@@ -2,7 +2,7 @@ import pytest
 import rasterio as rio
 
 
-@pytest.fixture(scope="module", autouse=True)
+@pytest.fixture()
 def setup_bands():
     prefix_20m = 'tests/assets/20m/'
     suffix_20m = '_20m_20181224.tif'
