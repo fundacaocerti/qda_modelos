@@ -51,7 +51,7 @@ pipeline {
                 stage('Coverage') {
                     steps {
                         dir('src/tests') {
-                            sh 'python3 -m pytest --cov --cov-report=xml --cov-report=term'
+                            sh 'python3 -m pytest --cov=. --cov-report=xml --cov-report=term'
                         }
                     }
                 }
