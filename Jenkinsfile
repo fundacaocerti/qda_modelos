@@ -18,6 +18,17 @@ pipeline {
         stage('Models') {
             agent any
             stages {
+                stage('Create virtual env') {
+                    steps {
+                        sh 'python3 -m pip install virtualenv'
+                        sh 'python3 -m virtualenv venv'
+                    }
+                }
+                stage('Source into virtual env') {
+                    steps {
+                        sh 'source venv/bin/activate'
+                    }
+                }
                 stage('Install requirements') {
                     steps {
                         sh 'python3 -m pip install -r requirements.txt'
