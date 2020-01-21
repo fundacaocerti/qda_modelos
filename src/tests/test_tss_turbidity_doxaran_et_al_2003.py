@@ -6,7 +6,7 @@
 import numpy
 import rasterio as rio
 import pytest
-from qda_modelos.models import total_suspended_solids_turbidity as turbidity
+from src.models import total_suspended_solids_turbidity as turbidity
 
 
 class TestTSSTurbidityDoxaranEtAl2003:

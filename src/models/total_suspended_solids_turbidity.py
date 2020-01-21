@@ -4,8 +4,6 @@
 # ##################################################################################################
 
 import numpy
-import rasterio as rio
-import rasterio
 
 numpy.seterr(divide="ignore", invalid="ignore")
 
