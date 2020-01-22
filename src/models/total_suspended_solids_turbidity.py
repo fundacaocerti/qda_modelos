@@ -8,38 +8,38 @@ import numpy
 numpy.seterr(divide="ignore", invalid="ignore")
 
 
-def doxaran_et_al_2003(band8a, band3):
+def doxaran_et_al_2003(reflectance_859nm_wavelength, reflectance_555nm_wavelength):
 
-    return band8a.astype(float) / band3
-
-
-def miller_mckee_2004(band4):
-
-    return band4
+    return reflectance_859nm_wavelength.astype(float) / reflectance_555nm_wavelength
 
 
-def liu_et_al_2006(band8a, band4):
+def miller_mckee_2004(reflectance_645nm_wavelength):
 
-    return (band4.astype(float) -
-            band8a.astype(float)) / (band4 + band8a)
-
-
-def doxaran_et_al_2009(band8a, band4):
-
-    return band8a.astype(float) / band4
+    return reflectance_645nm_wavelength
 
 
-def tarrant_et_al_2010(band8a, band4):
+def liu_et_al_2006(reflectance_859nm_wavelength, reflectance_645nm_wavelength):
 
-    return band4.astype(float) - band8a
-
-
-def zhang_et_al_2010(band4, band2):
-
-    return (band2.astype(float) -
-            band4.astype(float)) / (band2 + band4)
+    return (reflectance_645nm_wavelength.astype(float) -
+            reflectance_859nm_wavelength.astype(float)) / (reflectance_645nm_wavelength + reflectance_859nm_wavelength) 
 
 
-def tang_et_al_2010(band3, band2):
+def doxaran_et_al_2009(reflectance_859nm_wavelength, reflectance_645nm_wavelength):
 
-    return band3.astype(float) / band2
+    return reflectance_859nm_wavelength.astype(float) / reflectance_645nm_wavelength
+
+
+def tarrant_et_al_2010(reflectance_859nm_wavelength_, reflectance_645nm_wavelength):
+
+    return reflectance_645nm_wavelength.astype(float) - reflectance_859nm_wavelength_
+
+
+def zhang_et_al_2010(reflectance_645nm_wavelength, reflectance_469nm_wavelength):
+
+    return (reflectance_469nm_wavelength.astype(float) -
+            reflectance_645nm_wavelength.astype(float)) / (reflectance_469nm_wavelength + reflectance_645nm_wavelength)
+
+
+def tang_et_al_2010(reflectance_560nm_wavelength, reflectance_490nm_wavelength):
+
+    return reflectance_560nm_wavelength.astype(float) / reflectance_490nm_wavelength

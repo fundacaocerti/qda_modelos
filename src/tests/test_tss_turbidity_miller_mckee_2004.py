@@ -25,4 +25,4 @@ class TestTSSTurbidityMillerMckee2004:
         miller_mckee_2004_result = turbidity.miller_mckee_2004(B04)
 
         assert isinstance(miller_mckee_2004_result,
-                          numpy.ndarray), "The function should return an instance of numpys ndarray"
+                          numpy.ndarray)

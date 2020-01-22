@@ -18,7 +18,7 @@ class TestTSSTurbidityDoxaranEtAl2003:
             R20m_bands["B8A"], R20m_bands["B03"])
 
         assert isinstance(doxaran_et_al_2003_result,
-                          numpy.ndarray), "The function should return an instance of numpys ndarray"
+                          numpy.ndarray)
 
     def test_expected_result_shape(self, setup_bands):
         R20m_bands = setup_bands["20m"]
