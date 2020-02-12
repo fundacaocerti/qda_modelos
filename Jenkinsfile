@@ -18,17 +18,6 @@ pipeline {
         stage('Models') {
             agent any
             stages {
-                stage('Create virtual env') {
-                    steps {
-                        sh 'python3 -m pip install virtualenv'
-                        sh 'python3 -m virtualenv venv'
-                    }
-                }
-                stage('Source into virtual env') {
-                    steps {
-                        sh '. venv/bin/activate'
-                    }
-                }
                 stage('Install requirements') {
                     steps {
                         sh 'python3 -m pip install -r requirements.txt'
@@ -56,20 +45,6 @@ pipeline {
                     }
                 }
             }
-        }/**
-        post {
-            always {
-                node('server 3'){
-                    dir('scripts') {
-                        sh 'python3 devenv.py clean'
-                    }
-                }
-            }
-            cleanup {
-                node('server 3'){
-                    cleanWs()
-                }
-            }
-        }**/
+        }
     }
 }
