@@ -51,7 +51,7 @@ pipeline {
                     steps {
                         script {
                             withSonarQubeEnv() {
-                                sh '${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=QDA -Dsonar.projectName=QualidadeDaAgua -Dsonar.projectBaseDir=src -Dsonar.projectVersion=1.0 -Dsonar.sources=. -Dsonar.tests=tests -Dsonar.test.inclusions=tests/test_*.py -Dsonar.python.coverage.reportPaths=coverage.xml -Dsonar.python.xunit.reportPath=unittest.xml -Dsonar.python.pylint.reportPath=pylint-report.txt'
+                                sh '${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=QDA-Modelos -Dsonar.projectName=QDA-Modelos -Dsonar.projectBaseDir=src -Dsonar.projectVersion=1.0 -Dsonar.sources=. -Dsonar.tests=tests -Dsonar.test.inclusions=tests/test_*.py -Dsonar.python.coverage.reportPaths=coverage.xml -Dsonar.python.xunit.reportPath=unittest.xml -Dsonar.python.pylint.reportPath=pylint-report.txt'
                             }
                         }
                     }
