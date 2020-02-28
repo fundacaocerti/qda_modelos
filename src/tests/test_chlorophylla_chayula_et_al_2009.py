@@ -5,7 +5,7 @@
 
 import numpy
 import pytest
-from src.models import chlorophylla
+from models import chlorophylla
 
 
 class TestChlorophyllaChayulaEtAl2009:

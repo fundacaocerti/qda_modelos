@@ -6,13 +6,12 @@
 import numpy
 import rasterio as rio
 import pytest
-from src.models import total_suspended_solids_turbidity as turbidity
+from models import total_suspended_solids_turbidity as turbidity
 
 
 class TestTSSTurbidityMillerMckee2004:
-
     def test_expected_result(self, setup_bands):
-        B04 = setup_bands["20m"]['B04']
+        B04 = setup_bands["20m"]["B04"]
 
         miller_mckee_2004_result = turbidity.miller_mckee_2004(B04)
 
@@ -20,9 +19,9 @@ class TestTSSTurbidityMillerMckee2004:
 
     def test_expected_result_type(self, setup_bands):
 
-        B04 = setup_bands["20m"]['B04']
+        B04 = setup_bands["20m"]["B04"]
 
         miller_mckee_2004_result = turbidity.miller_mckee_2004(B04)
 
-        assert isinstance(miller_mckee_2004_result,
-                          numpy.ndarray)
+        assert isinstance(miller_mckee_2004_result, numpy.ndarray)
+
