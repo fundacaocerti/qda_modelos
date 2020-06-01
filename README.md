@@ -1,4 +1,4 @@
-# Bio-Optical Models to Analyze Water Quality  
+# Bio-Optical Models for Water Quality Analysis  
 
 
 This repository has the implementation and tests of benchmarked bio-optic models that evaluates some water quality indexes by analyzing satellite images.
