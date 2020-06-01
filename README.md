@@ -45,14 +45,6 @@ To execute this project, you'll need the following technologies:
 - [Python 3](https://www.python.org/downloads/)
 
 
-### Development
-
-To start the development, it is necessary to clone or download Bitbucket repository in a directory of your choice:  
-  
-  
-```git clone https://user@bitbucket.org/certi_repos/qda_modelos.git```
-
-
 ### Setup
 
 This repository can be used as a complementary library for a main project and its modules can be used whenever they are necessary. 
@@ -78,7 +70,7 @@ from models import total_suspended_solids_turbidity as turbidity
 ``` 
 
 
-Set and open the respective band (or bands) required to analyze the indexes:
+Set and open the respective satellite images required to analyze the indexes:
 
 
 ```python
@@ -108,6 +100,9 @@ with rio.open("miller_mckee_2004.tif", "w", **meta) as dist:
     dist.write(miller_mckee_2004.astype(rio.float32))
 ```
 
+The output is a **.tif** file containing the reservoir image processed by the method:
+
+![Reservoir](https://i.imgur.com/gOnaIAn.png)
 
 ## Testing
 
