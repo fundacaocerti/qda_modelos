@@ -8,34 +8,34 @@ import pytest
 from models import chlorophylla
 
 
-class TestChlorophyllaChayulaEtAl2009:
-
+class TestChlorophyllaChavulaEtAl2009:
     def test_expected_result_type(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        chayula_et_al_2009_result = chlorophylla.chayula_et_al_2009(
-            R20m_bands["B03"], R20m_bands["B01"])
+        chavula_et_al_2009_result = chlorophylla.chavula_et_al_2009(
+            R20m_bands["B03"], R20m_bands["B01"]
+        )
 
-        assert isinstance(chayula_et_al_2009_result,
-                          numpy.ndarray)
+        assert isinstance(chavula_et_al_2009_result, numpy.ndarray)
 
     def test_expected_result_shape(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        chayula_et_al_2009_result = chlorophylla.chayula_et_al_2009(
-            R20m_bands["B03"], R20m_bands["B01"])
+        chavula_et_al_2009_result = chlorophylla.chavula_et_al_2009(
+            R20m_bands["B03"], R20m_bands["B01"]
+        )
 
-        assert chayula_et_al_2009_result.shape == R20m_bands["B03"].shape
+        assert chavula_et_al_2009_result.shape == R20m_bands["B03"].shape
 
     def test_expected_error_for_wrong_number_of_bands(self, setup_bands):
-        B03 = setup_bands['20m']['B03']
+        B03 = setup_bands["20m"]["B03"]
 
         with pytest.raises(TypeError):
-            chlorophylla.chayula_et_al_2009(B03)
+            chlorophylla.chavula_et_al_2009(B03)
 
     def test_expected_error_for_bands_of_different_shapes(self, setup_bands):
-        B03 = setup_bands['20m']['B03']
-        B01 = setup_bands['10m']['B01']
+        B03 = setup_bands["20m"]["B03"]
+        B01 = setup_bands["10m"]["B01"]
 
         with pytest.raises(ValueError):
-            chlorophylla.chayula_et_al_2009(B03, B01)
+            chlorophylla.chavula_et_al_2009(B03, B01)

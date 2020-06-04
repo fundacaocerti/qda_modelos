@@ -69,7 +69,7 @@ def rodrigues_et_al_2016(reflectance_893nm_wavelength, reflectance_838nm_wavelen
     return reflectance_838nm_wavelength.astype(float) / reflectance_893nm_wavelength
 
 
-def chayula_et_al_2009(reflectance_551nm_wavelength, reflectance_443nm_wavelength):
+def chavula_et_al_2009(reflectance_551nm_wavelength, reflectance_443nm_wavelength):
 
     return reflectance_443nm_wavelength.astype(float) / reflectance_551nm_wavelength
 
