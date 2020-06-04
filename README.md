@@ -181,7 +181,7 @@ VILLA, P.; LAINI, A.; BRESCIANI, M.; BOLPAGNI, R. A remote sensing approach to m
 VILLA, P.; MOUSIVAND, A.; BRESCIANI, M. Aquatic vegetation indices assessment through radiative transfer modeling and linear mixture simulation. International Journal of Applied Earth Observation and Geoinformation, [s. l.], v. 30, p. 113–127, 2014. 
 
 
-### Total Supened Solids and Turbidity
+### Total Supended Solids and Turbidity
 
 DOXARAN, D.; FROIDEFOND, J.-M.; CASTAING, P. Remote-sensing reflectance of turbid sediment-dominated waters Reduction of sediment type variations and changing illumination conditions effects by use of reflectance ratios. Applied Optics, [s. l.], v. 42, n. 15, p. 2623, 2003.
 
