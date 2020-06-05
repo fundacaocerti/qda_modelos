@@ -23,7 +23,7 @@ In order to analyze the water quality of reservoirs and lakes by remote sensing 
 onboard satellites.
 
 According to the literature there are different approaches used in bio-optical modeling
-since simple models, based on empirical and semi-empirical relations, until mots complexes models based on radiative transfer theory.
+since simple models, based on empirical and semi-empirical relations, until most complexes models based on radiative transfer theory.
 
 Currently, this project implements a library of empirical and semi-empirical models which can be
 used to predict the concentration of chlorophyll-a, total suspended solids, water transparency, turbidity, phycocyanin and the detection of macrophytes in aquatic environments.
