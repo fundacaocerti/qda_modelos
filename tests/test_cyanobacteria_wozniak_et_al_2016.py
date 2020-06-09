@@ -5,33 +5,37 @@
 
 import numpy
 import pytest
-from models import chlorophylla
+from qda_modelos import cyanobacteria
 
 
-class TestChlorophyllaGons1999:
+class TestCyanobacteriaWozniakEtAl2016:
     def test_expected_result_type(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        gons_1999_result = chlorophylla.gons_1999(R20m_bands["B05"], R20m_bands["B04"])
+        wozniak_et_al_2016_result = cyanobacteria.wozniak_et_al_2016(
+            R20m_bands["B04"], R20m_bands["B03"]
+        )
 
-        assert isinstance(gons_1999_result, numpy.ndarray)
+        assert isinstance(wozniak_et_al_2016_result, numpy.ndarray)
 
     def test_expected_result_shape(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        gons_1999_result = chlorophylla.gons_1999(R20m_bands["B05"], R20m_bands["B04"])
+        wozniak_et_al_2016_result = cyanobacteria.wozniak_et_al_2016(
+            R20m_bands["B04"], R20m_bands["B03"]
+        )
 
-        assert gons_1999_result.shape == R20m_bands["B05"].shape
+        assert wozniak_et_al_2016_result.shape == R20m_bands["B04"].shape
 
     def test_expected_error_for_wrong_number_of_bands(self, setup_bands):
-        B05 = setup_bands["20m"]["B05"]
+        B04 = setup_bands["20m"]["B04"]
 
         with pytest.raises(TypeError):
-            chlorophylla.gons_1999(B05)
+            cyanobacteria.wozniak_et_al_2016(B04)
 
     def test_expected_error_for_bands_of_different_shapes(self, setup_bands):
-        B05 = setup_bands["20m"]["B05"]
-        B04 = setup_bands["10m"]["B04"]
+        B04 = setup_bands["20m"]["B04"]
+        B03 = setup_bands["10m"]["B03"]
 
         with pytest.raises(ValueError):
-            chlorophylla.gons_1999(B05, B04)
+            cyanobacteria.wozniak_et_al_2016(B04, B03)

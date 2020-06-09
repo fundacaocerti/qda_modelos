@@ -5,7 +5,7 @@
 
 import numpy
 import pytest
-from models import water_transparency as transparency
+from qda_modelos import water_transparency as transparency
 
 
 class TestWaterTransparencyGiardinoEtAl2001:

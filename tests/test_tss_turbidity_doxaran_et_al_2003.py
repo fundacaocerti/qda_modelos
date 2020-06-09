@@ -4,38 +4,39 @@
 # ##################################################################################################
 
 import numpy
+import rasterio as rio
 import pytest
-from models import chlorophylla
+from qda_modelos import total_suspended_solids_turbidity as turbidity
 
 
-class TestChlorophyllaChavulaEtAl2009:
+class TestTSSTurbidityDoxaranEtAl2003:
     def test_expected_result_type(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        chavula_et_al_2009_result = chlorophylla.chavula_et_al_2009(
-            R20m_bands["B03"], R20m_bands["B01"]
+        doxaran_et_al_2003_result = turbidity.doxaran_et_al_2003(
+            R20m_bands["B8A"], R20m_bands["B03"]
         )
 
-        assert isinstance(chavula_et_al_2009_result, numpy.ndarray)
+        assert isinstance(doxaran_et_al_2003_result, numpy.ndarray)
 
     def test_expected_result_shape(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        chavula_et_al_2009_result = chlorophylla.chavula_et_al_2009(
-            R20m_bands["B03"], R20m_bands["B01"]
+        doxaran_et_al_2003_result = turbidity.doxaran_et_al_2003(
+            R20m_bands["B8A"], R20m_bands["B03"]
         )
 
-        assert chavula_et_al_2009_result.shape == R20m_bands["B03"].shape
+        assert doxaran_et_al_2003_result.shape == R20m_bands["B8A"].shape
 
     def test_expected_error_for_wrong_number_of_bands(self, setup_bands):
-        B03 = setup_bands["20m"]["B03"]
+        B8A = setup_bands["20m"]["B8A"]
 
         with pytest.raises(TypeError):
-            chlorophylla.chavula_et_al_2009(B03)
+            turbidity.doxaran_et_al_2003(B8A)
 
     def test_expected_error_for_bands_of_different_shapes(self, setup_bands):
-        B03 = setup_bands["20m"]["B03"]
-        B01 = setup_bands["10m"]["B01"]
+        B8A = setup_bands["20m"]["B8A"]
+        B03 = setup_bands["10m"]["B03"]
 
         with pytest.raises(ValueError):
-            chlorophylla.chavula_et_al_2009(B03, B01)
+            turbidity.doxaran_et_al_2003(B8A, B03)

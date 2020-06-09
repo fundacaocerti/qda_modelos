@@ -6,7 +6,7 @@
 
 import numpy
 import pytest
-from models import macrophytes
+from qda_modelos import macrophytes
 
 
 class TestMacrophytesHueteEtAl1997:
@@ -64,4 +64,3 @@ class TestMacrophytesHueteEtAl1997:
                 reflectance_red_wavelength,
                 reflectance_blue_wavelength,
             )
-

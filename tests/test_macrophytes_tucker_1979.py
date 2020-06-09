@@ -5,7 +5,7 @@
 
 import numpy
 import pytest
-from models import macrophytes
+from qda_modelos import macrophytes
 
 
 class TestMacrophytesTucker1979:

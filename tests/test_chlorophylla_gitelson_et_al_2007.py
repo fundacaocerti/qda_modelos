@@ -4,39 +4,39 @@
 # ##################################################################################################
 
 import numpy
-import rasterio as rio
 import pytest
-from models import total_suspended_solids_turbidity as turbidity
+from qda_modelos import chlorophylla
 
 
-class TestTSSTurbidityDoxaranEtAl2009:
+class TestChlorophyllaGitelsonEtAl2007:
     def test_expected_result_type(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        doxaran_et_al_2009_result = turbidity.doxaran_et_al_2009(
-            R20m_bands["B8A"], R20m_bands["B04"]
+        gitelson_et_al_2007_result = chlorophylla.gitelson_et_al_2007(
+            R20m_bands["B06"], R20m_bands["B05"], R20m_bands["B04"]
         )
 
-        assert isinstance(doxaran_et_al_2009_result, numpy.ndarray)
+        assert isinstance(gitelson_et_al_2007_result, numpy.ndarray)
 
     def test_expected_result_shape(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        doxaran_et_al_2009_result = turbidity.doxaran_et_al_2009(
-            R20m_bands["B8A"], R20m_bands["B04"]
+        gitelson_et_al_2007_result = chlorophylla.gitelson_et_al_2007(
+            R20m_bands["B06"], R20m_bands["B05"], R20m_bands["B04"]
         )
 
-        assert doxaran_et_al_2009_result.shape == R20m_bands["B8A"].shape
+        assert gitelson_et_al_2007_result.shape == R20m_bands["B05"].shape
 
     def test_expected_error_for_wrong_number_of_bands(self, setup_bands):
-        B8A = setup_bands["20m"]["B8A"]
+        B05 = setup_bands["20m"]["B05"]
 
         with pytest.raises(TypeError):
-            turbidity.doxaran_et_al_2009(B8A)
+            chlorophylla.gitelson_et_al_2007(B05)
 
     def test_expected_error_for_bands_of_different_shapes(self, setup_bands):
-        B8A = setup_bands["20m"]["B8A"]
+        B06 = setup_bands["20m"]["B06"]
+        B05 = setup_bands["20m"]["B05"]
         B04 = setup_bands["10m"]["B04"]
 
         with pytest.raises(ValueError):
-            turbidity.doxaran_et_al_2009(B8A, B04)
+            chlorophylla.gitelson_et_al_2007(B06, B05, B04)

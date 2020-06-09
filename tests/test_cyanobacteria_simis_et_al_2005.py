@@ -5,38 +5,37 @@
 
 import numpy
 import pytest
-from models import cyanobacteria
+from qda_modelos import cyanobacteria
 
 
-class TestCyanobacteriaWozniakEtAl2016:
+class TestCyanobacteriaSimisEtAl2005:
     def test_expected_result_type(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        wozniak_et_al_2016_result = cyanobacteria.wozniak_et_al_2016(
-            R20m_bands["B04"], R20m_bands["B03"]
+        simis_et_al_2005_result = cyanobacteria.simis_et_al_2005(
+            R20m_bands["B05"], R20m_bands["B04"]
         )
 
-        assert isinstance(wozniak_et_al_2016_result, numpy.ndarray)
+        assert isinstance(simis_et_al_2005_result, numpy.ndarray)
 
     def test_expected_result_shape(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        wozniak_et_al_2016_result = cyanobacteria.wozniak_et_al_2016(
-            R20m_bands["B04"], R20m_bands["B03"]
+        simis_et_al_2005_result = cyanobacteria.simis_et_al_2005(
+            R20m_bands["B05"], R20m_bands["B04"]
         )
 
-        assert wozniak_et_al_2016_result.shape == R20m_bands["B04"].shape
+        assert simis_et_al_2005_result.shape == R20m_bands["B05"].shape
 
     def test_expected_error_for_wrong_number_of_bands(self, setup_bands):
-        B04 = setup_bands["20m"]["B04"]
+        B05 = setup_bands["20m"]["B05"]
 
         with pytest.raises(TypeError):
-            cyanobacteria.wozniak_et_al_2016(B04)
+            cyanobacteria.simis_et_al_2005(B05)
 
     def test_expected_error_for_bands_of_different_shapes(self, setup_bands):
-        B04 = setup_bands["20m"]["B04"]
-        B03 = setup_bands["10m"]["B03"]
+        B05 = setup_bands["20m"]["B05"]
+        B04 = setup_bands["10m"]["B04"]
 
         with pytest.raises(ValueError):
-            cyanobacteria.wozniak_et_al_2016(B04, B03)
-
+            cyanobacteria.simis_et_al_2005(B05, B04)

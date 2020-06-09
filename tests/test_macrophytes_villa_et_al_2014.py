@@ -6,7 +6,7 @@
 
 import numpy
 import pytest
-from models import macrophytes
+from qda_modelos import macrophytes
 
 
 class TestMacrophytesVillaEtAt2014:
@@ -46,4 +46,3 @@ class TestMacrophytesVillaEtAt2014:
 
         with pytest.raises(ValueError):
             macrophytes.villa_et_al_2014(B8A, B02, correction_factor_L)
-

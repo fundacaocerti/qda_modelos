@@ -5,37 +5,33 @@
 
 import numpy
 import pytest
-from models import macrophytes
+from qda_modelos import chlorophylla
 
 
-class TestMacrophytesVillaEtAl2013:
+class TestChlorophyllaGons1999:
     def test_expected_result_type(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        villa_et_al_2013_result = macrophytes.villa_et_al_2013(
-            R20m_bands["B8A"], R20m_bands["B02"]
-        )
+        gons_1999_result = chlorophylla.gons_1999(R20m_bands["B05"], R20m_bands["B04"])
 
-        assert isinstance(villa_et_al_2013_result, numpy.ndarray)
+        assert isinstance(gons_1999_result, numpy.ndarray)
 
     def test_expected_result_shape(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        villa_et_al_2013_result = macrophytes.villa_et_al_2013(
-            R20m_bands["B8A"], R20m_bands["B02"]
-        )
+        gons_1999_result = chlorophylla.gons_1999(R20m_bands["B05"], R20m_bands["B04"])
 
-        assert villa_et_al_2013_result.shape == R20m_bands["B8A"].shape
+        assert gons_1999_result.shape == R20m_bands["B05"].shape
 
     def test_expected_error_for_wrong_number_of_bands(self, setup_bands):
-        B8A = setup_bands["20m"]["B8A"]
+        B05 = setup_bands["20m"]["B05"]
 
         with pytest.raises(TypeError):
-            macrophytes.villa_et_al_2013(B8A)
+            chlorophylla.gons_1999(B05)
 
     def test_expected_error_for_bands_of_different_shapes(self, setup_bands):
-        B8A = setup_bands["20m"]["B8A"]
-        B02 = setup_bands["10m"]["B02"]
+        B05 = setup_bands["20m"]["B05"]
+        B04 = setup_bands["10m"]["B04"]
 
         with pytest.raises(ValueError):
-            macrophytes.villa_et_al_2013(B8A, B02)
+            chlorophylla.gons_1999(B05, B04)

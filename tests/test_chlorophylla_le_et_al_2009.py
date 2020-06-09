@@ -5,7 +5,7 @@
 
 import numpy
 import pytest
-from models import chlorophylla
+from qda_modelos import chlorophylla
 
 
 class TestChlorophyllaLeEtAl2009:

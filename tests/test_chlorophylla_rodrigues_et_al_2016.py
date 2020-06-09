@@ -5,37 +5,37 @@
 
 import numpy
 import pytest
-from models import chlorophylla
+from qda_modelos import chlorophylla
 
 
-class TestChlorophyllaMishraMishra2012:
+class TestChlorophyllaRodriguesEtAl2016:
     def test_expected_result_type(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        mishra_mishra_2012_result = chlorophylla.mishra_mishra_2012(
-            R20m_bands["B05"], R20m_bands["B04"]
+        rodrigues_et_al_2016_result = chlorophylla.rodrigues_et_al_2016(
+            R20m_bands["B8A"], R20m_bands["B08"]
         )
 
-        assert isinstance(mishra_mishra_2012_result, numpy.ndarray)
+        assert isinstance(rodrigues_et_al_2016_result, numpy.ndarray)
 
     def test_expected_result_shape(self, setup_bands):
         R20m_bands = setup_bands["20m"]
 
-        mishra_mishra_2012_result = chlorophylla.mishra_mishra_2012(
-            R20m_bands["B05"], R20m_bands["B04"]
+        rodrigues_et_al_2016_result = chlorophylla.rodrigues_et_al_2016(
+            R20m_bands["B8A"], R20m_bands["B08"]
         )
 
-        assert mishra_mishra_2012_result.shape == R20m_bands["B05"].shape
+        assert rodrigues_et_al_2016_result.shape == R20m_bands["B8A"].shape
 
     def test_expected_error_for_wrong_number_of_bands(self, setup_bands):
-        B05 = setup_bands["20m"]["B05"]
+        B8A = setup_bands["20m"]["B8A"]
 
         with pytest.raises(TypeError):
-            chlorophylla.mishra_mishra_2012(B05)
+            chlorophylla.rodrigues_et_al_2016(B8A)
 
     def test_expected_error_for_bands_of_different_shapes(self, setup_bands):
-        B05 = setup_bands["20m"]["B05"]
-        B04 = setup_bands["10m"]["B04"]
+        B8A = setup_bands["20m"]["B8A"]
+        B08 = setup_bands["10m"]["B08"]
 
         with pytest.raises(ValueError):
-            chlorophylla.mishra_mishra_2012(B05, B04)
+            chlorophylla.rodrigues_et_al_2016(B8A, B08)
