@@ -39,7 +39,7 @@ pipeline {
                 }
                 stage('Coverage') {
                     steps {
-                        dir('qda_modelos) {
+                        dir('qda_modelos') {
                             sh 'python3 -m pytest --cov=. --cov-report=xml --cov-report=term'
                         }
                     }
