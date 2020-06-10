@@ -25,9 +25,7 @@ pipeline {
                 }
                 stage('Lint') {
                     steps {
-                        dir('qda_modelos') {
                             sh 'python3 -m prospector --output-format pylint:pylint-report.txt'
-                        }
                     }
                 }
                 stage('Tests') {
