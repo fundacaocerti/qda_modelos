@@ -8,4 +8,4 @@ pylint:
     - too-many-arguments
 
 ignore-paths:
-    - qda_modelos/__init__
+    - qda_modelos/__init__.py
