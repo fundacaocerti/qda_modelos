@@ -23,13 +23,13 @@ pipeline {
                         sh 'python3 -m pip install -r requirements.txt'
                     }
                 }
-                /*stage('Lint') {
+                stage('Lint') {
                     steps {
                         dir('qda_modelos') {
                             sh 'python3 -m prospector --output-format pylint:pylint-report.txt'
                         }
                     }
-                }*/
+                }
                 stage('Tests') {
                     steps {
                         sh 'python3 -m pytest -ra --junitxml=unittest.xml'
@@ -48,7 +48,7 @@ pipeline {
                     steps {
                         script {
                             withSonarQubeEnv() {
-                                sh '${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=QDA-Modelos -Dsonar.projectName=QDA-Modelos -Dsonar.projectBaseDir=qda_modelos -Dsonar.projectVersion=1.0 -Dsonar.sources=. -Dsonar.tests=tests -Dsonar.test.inclusions=tests/test_*.py -Dsonar.python.coverage.reportPaths=coverage.xml -Dsonar.python.xunit.reportPath=unittest.xml -Dsonar.python.pylint.reportPath=pylint-report.txt'
+                                sh '${scannerHome}/bin/sonar-scanner -Dsonar.projectKey=QDA-Modelos -Dsonar.projectName=QDA-Modelos -Dsonar.projectBaseDir=. -Dsonar.projectVersion=1.0 -Dsonar.sources=. -Dsonar.tests=tests -Dsonar.test.inclusions=tests/test_*.py -Dsonar.python.coverage.reportPaths=coverage.xml -Dsonar.python.xunit.reportPath=unittest.xml -Dsonar.python.pylint.reportPath=pylint-report.txt'
                             }
                         }
                     }

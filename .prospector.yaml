@@ -6,3 +6,6 @@ strictness: medium
 pylint:
   disable:
     - too-many-arguments
+
+ignore-paths:
+    - qda_modelos/__init__
