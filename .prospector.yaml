@@ -1,0 +1,10 @@
+# https://prospector.readthedocs.io/en/master/index.html
+autodetect: true
+
+strictness: medium
+
+pylint:
+  disable:
+    - too-many-arguments
+
+ignore-paths: ["qda_modelos/__init__.py"]
