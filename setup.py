@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name="qda_modelos,",
+    name="qda_modelos",
     packages=["qda_modelos"],
     version="1.0.0",
     license="BSD",
