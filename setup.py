@@ -3,7 +3,7 @@ from distutils.core import setup
 setup(
     name="qda_modelos",
     packages=["qda_modelos"],
-    version="1.0.1",
+    version="1.0.2",
     license="BSD",
     description="Implement bio-optic models to evaluate water quality indexes with satellite images.",
     author="CERTI Foundation",
@@ -20,7 +20,7 @@ setup(
         "water",
         "remote sensing",
     ],
-    install_requires=["numpy", "qda_modelos" "rasterio",],
+    install_requires=["numpy", "qda_modelos", "rasterio"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: BSD License",
