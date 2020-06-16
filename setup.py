@@ -3,15 +3,13 @@ from distutils.core import setup
 setup(
     name="qda_modelos,",
     packages=["qda_modelos"],
-    version="0.1",
+    version="1.0.0",
     license="BSD",
     description="Implement bio-optic models to evaluate water quality indexes with satellite images.",
     author="CERTI Foundation",
     author_email="qda-pypi@certi.org.br",
-    # Editar o "url" e o "download_url" quando já estiver inserido no GitHub
-    url="https://github.com/user/qda_modelos",
-    # Para o "download_url, é necessário "Create a new release" pelo GitHub
-    download_url="https://github.com/user/qda_modelos/archive/v_01.tar.gz",
+    url="https://github.com/fundacaocerti/qda_modelos",
+    download_url="https://github.com/fundacaocerti/qda_modelos/archive/v1.0.0.tar.gz",
     keywords=[
         "bio-optic models",
         "water quality",
