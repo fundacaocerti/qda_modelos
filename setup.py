@@ -1,16 +1,11 @@
 from distutils.core import setup
 
-with open("README.md", "r") as fh:
-    long_description = fh.read()
-
 setup(
     name="qda_modelos",
     packages=["qda_modelos"],
-    version="1.0.0",
+    version="1.0.1",
     license="BSD",
     description="Implement bio-optic models to evaluate water quality indexes with satellite images.",
-    long_description=long_description,
-    long_description_content_type="text/markdown",
     author="CERTI Foundation",
     author_email="qda-pypi@certi.org.br",
     url="https://github.com/fundacaocerti/qda_modelos",
