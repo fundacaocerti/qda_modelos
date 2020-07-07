@@ -20,7 +20,7 @@ setup(
         "water",
         "remote sensing",
     ],
-    install_requires=["numpy", "qda_modelos", "rasterio"],
+    install_requires=["numpy", "qda_modelos"],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: BSD License",

@@ -19,7 +19,7 @@ This repository has the implementation and tests of benchmarked bio-optic models
 
 ## General Info  
 
-In order to analyze the water quality of reservoirs and lakes by remote sensing methods, such as satellites images, bio-optical models were used. Those models are mathematical and statistical algorithms which can be used to predict different water quality indexes by analyzing the water-leaving radiance measured at different bands of electromagnetic spectrum by sensors
+In attempt to analyze the water quality of reservoirs and lakes by remote sensing methods, such as satellites images, bio-optical models were used. Those models are mathematical and statistical algorithms which can be used to predict different water quality indexes by analyzing the water-leaving radiance measured at different bands of electromagnetic spectrum by sensors
 onboard satellites.
 
 According to the literature there are different approaches used in bio-optical modeling
@@ -47,11 +47,14 @@ To execute this project, you'll need the following technologies:
 ### Setup
 
 This repository can be used as a complementary library for a main project and its modules can be used whenever they are necessary. 
-All dependencies are listed in requirements.txt.
 
 To install the package and dependencies use the following command:  
   
 ```pip install qda_modelos```
+
+In order to use **qda_modelos** in your project it's required to install the **rasterio** library:
+
+```pip install rasterio```
 
 You can install dependencies directly in your machine or in a virtual environment of your choice, such as [VirtualEnv](https://virtualenv.pypa.io/en/latest/) or [Conda](https://docs.conda.io/en/latest/).
 
