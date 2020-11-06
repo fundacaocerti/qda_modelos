@@ -14,4 +14,3 @@ def lamparelli_2004(chlorophylla, phosphorus):
     trophic_state_index_pho = 10 * (6 - (1.77 - 0.42 * (numpy.log(phosphorus) / numpy.log(2))))
 
     return (trophic_state_index_chl / trophic_state_index_pho) / 2
-

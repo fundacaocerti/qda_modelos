@@ -20,12 +20,12 @@ Table of contents
 General Info
 ------------
 
-In attempt to analyze the water quality of reservoirs and lakes by remote
-sensing methods, such as satellites images, bio-optical models were
-used. Those models are mathematical and statistical algorithms which can
-be used to predict different water quality indexes by analyzing the
-water-leaving radiance measured at different bands of electromagnetic
-spectrum by sensors onboard satellites.
+In attempt to analyze the water quality of reservoirs and lakes by
+remote sensing methods, such as satellites images, bio-optical models
+were used. Those models are mathematical and statistical algorithms
+which can be used to predict different water quality indexes by
+analyzing the water-leaving radiance measured at different bands of
+electromagnetic spectrum by sensors onboard satellites.
 
 According to the literature there are different approaches used in
 bio-optical modeling since simple models, based on empirical and
@@ -66,7 +66,8 @@ To install the package and dependencies use the following command:
 
 ``pip install qda_modelos``
 
-In order to use **qda_modelos** in your project it's required to install the **rasterio** library:
+In order to use **qda_modelos** in your project it’s required to install
+the **rasterio** library:
 
 ``pip install rasterio``
 
@@ -309,6 +310,13 @@ partir de imagens multiespectrais do sensor Operational Land Imager
 HÄRMÄ, P. et al. (2001). Detecting chlorophyll, Secchi disk depth and
 surface temperature in a sub-alpine lake using Landsat imagery. The
 Science of Total Environment, v. 268, pp. 107-121.
+
+Trophic State Index
+~~~~~~~~~~~~~~~~~~~
+
+LAMPARELLI, M.C. (2004) Grau de trofia em corpos d’água do estado de São
+Paulo: avaliação dos métodos de monitoramento. Thesis (Phd) – University
+of São Paulo, São Paulo.
 
 Authors & Contributors
 ----------------------

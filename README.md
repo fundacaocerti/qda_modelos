@@ -212,6 +212,12 @@ HÄRMÄ, P. et al. (2001). Detecting chlorophyll, Secchi disk depth and surface 
 
 
 
+### Trophic State Index
+
+LAMPARELLI,  M.C.  (2004)  Grau  de  trofia  em  corpos  d’água  do  estado  de  São  Paulo:  avaliação  dos  métodos  de  monitoramento. Thesis (Phd) – University of São Paulo, São Paulo.
+
+
+
 ## Authors & Contributors
 
 Developed by CERTI Foundation.
