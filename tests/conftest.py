@@ -1,3 +1,9 @@
+# ##################################################################################################
+# Copyright (c) 2020 - Fundação CERTI
+# All rights reserved.
+# ##################################################################################################
+
+import numpy
 import pytest
 import rasterio as rio
 
@@ -47,3 +53,9 @@ def setup_bands():
     }
 
     return bands
+
+
+@pytest.fixture
+def milligrams_per_liter_array():
+    with open('tests/assets/milligrams_per_liter.npy', 'rb') as file:
+        return numpy.load(file)

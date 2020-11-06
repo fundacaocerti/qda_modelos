@@ -4,3 +4,9 @@ __pycache__/
 #Environments
 env/
 venv/
+.venv/
+
+.DS_Store
+*/DS_Store
+.idea/
+.ipynb_checkpoints/

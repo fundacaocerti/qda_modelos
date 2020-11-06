@@ -39,3 +39,7 @@ from qda_modelos.water_transparency import (
     harma_et_al_2001,
     guimaraes_et_al_2016,
 )
+
+from qda_modelos.trophic_state_index import (
+    lamparelli_2004,
+)
