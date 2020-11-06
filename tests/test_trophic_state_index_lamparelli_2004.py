@@ -23,9 +23,9 @@ class TestTrophicStateIndexLamparelli2004:
 
         assert lamparelli_2004_result.shape == milligrams_per_liter_array.shape
 
-    def test_expected_error_for_arrays_of_different_shapes(self, setup_bands, milligrams_per_liter_array):
+    def test_expected_error_for_arrays_of_different_shapes(
+            self, setup_bands, milligrams_per_liter_array):
         different_shape_array = setup_bands["10m"]["B02"]
 
         with pytest.raises(ValueError):
             trophic_state_index.lamparelli_2004(milligrams_per_liter_array, different_shape_array)
-
