@@ -318,6 +318,12 @@ LAMPARELLI, M.C. (2004) Grau de trofia em corpos d’água do estado de São
 Paulo: avaliação dos métodos de monitoramento. Thesis (Phd) – University
 of São Paulo, São Paulo.
 
+Reservoir Water Quality Index
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+`QUALIDADE DE ÁGUA EM RESERVATÓRIOS
+(IQAR) <http://pnqa.ana.gov.br/indicadores-qualidade-agua.aspx>`__
+
 Authors & Contributors
 ----------------------
 
