@@ -65,7 +65,7 @@ def instituto_ambiental_parana_2004(
 
     :param dissolved_oxygen_deficit: Dissolved oxygen deficit (%)
     :type dissolved_oxygen_deficit: numpy array, mandatory
-    :param total_phosphorus: Total phosphorus in µg/L
+    :param total_phosphorus: Total phosphorus in mg/L
     :type total_phosphorus: numpy array, mandatory
     :param total_inorganic_nitrogen: Total inorganic nitrogen in N-mg/L
     :type total_inorganic_nitrogen: numpy array, mandatory
@@ -79,7 +79,7 @@ def instituto_ambiental_parana_2004(
     :type residence_time: numpy array, mandatory
     :param underwater_depth: Underwater depth in meters (m)
     :type underwater_depth: numpy array, mandatory
-    :param cyanobacteria: Cyanobacteria in number of cells per mg/L
+    :param cyanobacteria: Cyanobacteria in number of cells/mL
     :type cyanobacteria: numpy array, mandatory
     :return: Array with each cell scored according to the index weighting function
     :rtype: numpy array
