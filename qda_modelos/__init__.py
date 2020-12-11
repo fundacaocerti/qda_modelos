@@ -39,3 +39,11 @@ from qda_modelos.water_transparency import (
     harma_et_al_2001,
     guimaraes_et_al_2016,
 )
+
+from qda_modelos.trophic_state_index import (
+    lamparelli_2004,
+)
+
+from qda_modelos.reservoir_water_quality_index import (
+    instituto_ambiental_parana_2004,
+)
