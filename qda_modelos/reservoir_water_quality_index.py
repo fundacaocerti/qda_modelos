@@ -4,7 +4,7 @@
 # ##################################################################################################
 """
 This module implements the Reservoir Water Quality Index as
-presented by the Institudo Ambiental do Paraná, described in
+presented by the Instituto Ambiental do Paraná, described in
 http://pnqa.ana.gov.br/indicadores-qualidade-agua.aspx.
 """
 
