@@ -41,7 +41,7 @@ def _index_classification(index, possible_outputs, limits, conditional):
     }
 
     operators = [conditional] * len(limits)
-    for i, condition in enumerate(operators):
+    for i in range(len(operators)):
         conditional_list.append(condition(index, limits[i]))
     conditional_list.append(opposite_operators[conditional](index, limits[-1]))
 
