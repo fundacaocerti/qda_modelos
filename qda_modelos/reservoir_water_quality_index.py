@@ -4,7 +4,7 @@
 # ##################################################################################################
 """
 This module implements the Reservoir Water Quality Index as
-presented by the Institudo Ambiental do Paraná, described in
+presented by the Instituto Ambiental do Paraná, described in
 http://pnqa.ana.gov.br/indicadores-qualidade-agua.aspx.
 """
 
@@ -41,7 +41,7 @@ def _index_classification(index, possible_outputs, limits, conditional):
     }
 
     operators = [conditional] * len(limits)
-    for i, condition in enumerate(operators):
+    for i in range(len(operators)):
         conditional_list.append(condition(index, limits[i]))
     conditional_list.append(opposite_operators[conditional](index, limits[-1]))
 
