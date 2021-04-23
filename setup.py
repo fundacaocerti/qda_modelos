@@ -9,7 +9,7 @@ with open(path.join(this_directory, "README.rst")) as f:
 setup(
     name="qda_modelos",
     packages=["qda_modelos"],
-    version="1.1.2",
+    version="1.1.3",
     license="BSD",
     description="Implement bio-optic models to evaluate water quality indexes with satellite images.",
     long_description=long_description,
@@ -17,7 +17,7 @@ setup(
     author="CERTI Foundation",
     author_email="qda-pypi@certi.org.br",
     url="https://github.com/fundacaocerti/qda_modelos",
-    download_url="https://github.com/fundacaocerti/qda_modelos/archive/v1.1.2.tar.gz",
+    download_url="https://github.com/fundacaocerti/qda_modelos/archive/v1.1.3.tar.gz",
     keywords=[
         "bio-optic models",
         "water quality",
